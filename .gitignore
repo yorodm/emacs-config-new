@@ -1,0 +1,12 @@
+/.cache/
+/.custom.el
+/.dap-breakpoints
+/.lsp-session-v1
+/auto-save-list/
+*~
+*.elc
+/projects
+/transient/
+/tramp
+/private/
+/elpa/
