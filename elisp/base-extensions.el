@@ -10,21 +10,6 @@
 
 (use-package fd-dired)
 
-;; (use-package eglot
-;;   :ensure t
-;;   :bind (:map eglot-mode-map
-;;               ("C-c l a" . eglot-code-actions)
-;;               ("C-c l r" . eglot-rename)
-;;               ("C-c l o" . eglot-code-action-organize-imports)
-;;               ("C-c l f" . eglot-format)
-;;               ("C-c l d" . eldoc)
-;;               ("C-c !" . consult-flymake)))
-
-;; (use-package consult-eglot
-;;   :after eglot
-;;   :ensure t
-;;   :bind (:map eglot-mode-map ([remap xref-find-apropos] . #'consult-eglot-symbols)))
-
 (use-package lsp-mode
   :init
   (setq lsp-keymap-prefix "C-c l")
