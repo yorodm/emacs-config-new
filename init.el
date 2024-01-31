@@ -1,6 +1,6 @@
 
 (defun load-config (file)
-    (load (locate-user-emacs-file final)))
+    (load (locate-user-emacs-file file)))
 
 (load-config "base.el")
 (load-config "base-extensions.el")
