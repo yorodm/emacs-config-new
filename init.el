@@ -1,6 +1,6 @@
 
 (defun load-config (file)
-    (load (locate-user-emacs-file file)))
+    (load (locate-user-emacs-file (concat "elisp/" file))))
 
 (load-config "base.el")
 (load-config "base-extensions.el")
