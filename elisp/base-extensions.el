@@ -271,9 +271,9 @@
   (setq dired-garbage-files-regexp "\\(?:\\.\\(?:aux\\|bak\\|dvi\\|log\\|orig\\|rej\\|toc\\|pyc\\)\\)\\'")
   (setq dired-dwim-target 't))
 
-;(use-package direnv
-;  :config
-;  (direnv-mode 1))
+(use-package direnv
+ :config
+ (direnv-mode 1))
 
 (use-package deadgrep
   :defer 15)

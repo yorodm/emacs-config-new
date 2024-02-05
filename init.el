@@ -9,3 +9,4 @@
 (load-config "lang-python.el")
 (load-config "lang-rust.el")
 (load-config "lang-go.el")
+(load-config "lang-haskell.el")
