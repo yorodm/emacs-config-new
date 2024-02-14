@@ -167,6 +167,11 @@
 ;; for encryption
 (setq epg-pinentry-mode 'loopback)
 ;;
-(setq shell-file-name (executable-find "fish"))
+(defun guess-shell ()
+  "Guess which shell I'm using"
+  (cond ((executable-find "fish") (executable-find "fish"))
+       ((executable-find "bash") (executable-find "bash"))
+        ((executable-find "zsh") (executable-find "zsh"))))
+(setq-default shell-file-name (guess-shell))
 (provide 'base)
 ;;; base ends here
