@@ -4,12 +4,14 @@
 
 
 (use-package pip-requirements
+  :straight t
   :config
   (add-hook 'pip-requirements-mode-hook #'pip-requirements-auto-complete-setup))
 
 (use-package py-autopep8)
 
 (use-package pyvenv
+  :straight t
   :config
   (add-hook 'python-mode-hook #'pyvenv-mode))
 (setenv "WORKON_HOME" (expand-file-name "~/Documents/source/python/venvs"))

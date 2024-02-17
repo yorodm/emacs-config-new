@@ -1,16 +1,20 @@
 (use-package company
+  :straight t
   :bind (:map company-mode-map
 			  ("C-c TAB" . company-complete))
   :config
   (global-company-mode))
 
 (use-package company-quickhelp          ; Documentation popups for Company
+  :straight t
   :defer t
   :init (add-hook 'global-company-mode-hook #'company-quickhelp-mode))
 
-(use-package fd-dired)
+(use-package fd-dired
+  :straight t)
 
 (use-package lsp-mode
+  :straight t
   :init
   (setq lsp-keymap-prefix "C-c l")
   :config
@@ -20,11 +24,13 @@
   :commands (lsp lsp-deferred))
 
 (use-package dap-mode
+  :straight t
   :defer t
   :after lsp-mode
   :config (dap-auto-configure-mode))
 
 (use-package lsp-ui
+  :straight t
   :hook (lsp-mode . lsp-ui-mode)
   :config
   (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
@@ -36,6 +42,7 @@
 		lsp-ui-sideline-ignore-duplicate t))
 
 (use-package ediff
+  :ensure nil
   :config
   (setq ediff-window-setup-function 'ediff-setup-windows-plain)
   (setq-default ediff-highlight-all-diffs 'nil)
@@ -44,6 +51,7 @@
 
 
 (use-package helpful
+  :straight t
   :bind
   ("C-h k" . helpful-key)
   ("C-h f" . helpful-callable)
@@ -73,6 +81,7 @@
   )
 
 (use-package exec-path-from-shell
+  :straight t
   :config
   ;; Add GOPATH to shell
   (when (memq window-system '(mac ns))
@@ -82,12 +91,15 @@
   (exec-path-from-shell-initialize))
 
 (use-package expand-region
+  :straight t
   :bind
   ("C-=" . er/expand-region))
 
-(use-package flycheck)
+(use-package flycheck
+  :straight t)
 
 (use-package paradox
+  :straight ta
   :config
   (paradox-enable))
 
@@ -97,6 +109,7 @@
         (t (delete-backward-char 1))))
 
 (use-package prescient
+  :straight t
   :config
   (setq completion-styles '(prescient basic)
         completion-category-defaults nil
@@ -104,6 +117,7 @@
 
 ;; Enable vertico
 (use-package vertico
+  :straight t
   :init
   (vertico-mode)
   :config
@@ -135,9 +149,11 @@
 ;; Persist history over Emacs restarts. Vertico sorts by history position.
 
 
-(use-package company-prescient)
+(use-package company-prescient
+  :straight t)
 
 (use-package consult
+  :straight t
   :config
   (use-package recentf)
   :bind (("C-x M-:" . consult-complex-command)
@@ -165,6 +181,7 @@
          ("<help> a" . consult-apropos)))
 
 (use-package consult-dir
+  :straight t
   :after consult
   :bind (("C-x C-d" . consult-dir)
          :map minibuffer-local-completion-map
@@ -173,6 +190,7 @@
 
 ;; Enable richer annotations using the Marginalia package
 (use-package marginalia
+  :straight t
   :init (marginalia-mode)
 
   (setq marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil))
@@ -186,6 +204,7 @@
   (setq display-line-numbers 'relative))
 
 (use-package magit
+  :straight t
   :config
   (setq magit-log-margin '(t "%Y-%m-%dT%H:%M:%S" magit-log-margin-width t 18))
   ;; (setq magit-refresh-status-buffer nil)
@@ -195,8 +214,10 @@
   ;; (remove-hook 'magit-status-sections-hook 'magit-insert-unpushed-to-upstream-or-recent)
   (setq auto-revert-buffer-list-filter
 		'magit-auto-revert-repository-buffer-p)
-  (use-package magit-popup)
+  (use-package magit-popup
+    :straight t)
   (use-package magit-gitflow
+    :straight t
 	:after (magit)
 	:config
 	(add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
@@ -227,9 +248,11 @@
   (add-to-list 'ispell-skip-region-alist '("\s*#\\+begin_example" . "\s*#\\+end_example")))
 
 
-(use-package page-break-lines)
+(use-package page-break-lines
+    :straight t)
 
 (use-package projectile
+  :straight t
   :bind (:map projectile-mode-map
 			  ("C-c p" . projectile-command-map))
   :config
@@ -253,11 +276,13 @@
   (projectile-global-mode))
 
 (use-package recentf
+  :straight t
   :config
   (setq recentf-save-file (recentf-expand-file-name "~/.emacs.d/private/cache/recentf"))
   (recentf-mode 1))
 
 (use-package which-key
+  :straight t
   :config
   (which-key-mode))
 
@@ -272,49 +297,57 @@
   (setq dired-dwim-target 't))
 
 (use-package direnv
+  :straight t
  :config
  (direnv-mode 1))
 
 (use-package deadgrep
+  :straight t
   :defer 15)
 
 (use-package yasnippet
+  :straight t
   :config
   (use-package yasnippet-snippets
+    :straight t
 	:defer 15)
   (yas-global-mode 1))
 
 (use-package know-your-http-well
-  :defer 15)
-
-(use-package git
+  :straight t
   :defer 15)
 
 (use-package restclient
+  :straight t
   :mode ("\\.http\\'" . restclient-mode)
   :config
   (use-package company-restclient))
 
 
 (use-package yaml-mode
+  :straight t
   :defer 15)
 
 (use-package indent-guide
+  :straight t
   :after (yaml-mode)
   :hook (yaml-mode . indent-guide-mode))
 
 
 (use-package dockerfile-mode
+  :straight t
   :defer 10)
 
 (use-package tree-sitter
+  :straight t
   :config
-  (use-package tree-sitter-langs)
+  (use-package tree-sitter-langs
+    :straight t)
   (global-tree-sitter-mode))
 
 (use-package pass)
 (use-package format-all
-  :pin melpa)
+  :straight t)
 ;(load-file "~/sources/hugo-blog-mode/hugo-blog-mode.el")
 ;(setq hugo-blog-project (expand-file-name "~/sources/yorodm-site/"))
 

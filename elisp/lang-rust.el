@@ -2,5 +2,6 @@
 
 ;; rust-mode
 ;; https://github.com/rust-lang/rust-mode
-(use-package rustic)
+(use-package rustic
+    :straight t)
 (provide 'lang-rust)

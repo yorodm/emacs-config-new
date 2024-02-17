@@ -1,5 +1,5 @@
 (use-package sql-indent
-  :pin gnu
+  :straight t
   :hook (sql-mode . sqlind-minor-mode)
   :config
   (setq sql-use-indent-support t))

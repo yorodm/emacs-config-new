@@ -1,9 +1,9 @@
 (use-package go-mode
+  :straight t
   :bind
   :config
-  (use-package go-dlv)
-  ;; Call Gofmt before saving
-  )
+  (use-package go-dlv
+      :straight t))
 
 
 (defun setup-go-mode-compile ()

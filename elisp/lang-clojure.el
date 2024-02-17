@@ -1,3 +1,3 @@
 (use-package cider
-  :pin melpa)
+    :straight t)
 (provide 'lang-clojure)

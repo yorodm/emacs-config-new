@@ -1,10 +1,12 @@
-(use-package all-the-icons)
+(use-package all-the-icons
+    :straight t)
 
 ;;(require 'uwu-theme)
 
 ;; (enable-theme 'uwu)
 
 (use-package color-theme-sanityinc-tomorrow
+  :straight t
   :config
   (color-theme-sanityinc-tomorrow-eighties))
 
@@ -34,12 +36,13 @@
 
 
 (use-package mood-line
-  :ensure t
+  :straight t
   :config
   (mood-line-mode))
 
 
 (use-package ligature
+  :straight t
   :config
   ;; Enable the "www" ligature in every possible major mode
   (ligature-set-ligatures 't '("www"))

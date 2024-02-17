@@ -26,8 +26,7 @@
 
 
 (use-package web-mode
-  :pin melpa
-  :ensure t)
+  :straight t)
 
 
 (provide 'lang-web)

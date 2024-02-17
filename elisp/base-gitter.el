@@ -1,4 +1,5 @@
 (use-package circe
+  :straight t
   :config
   (setq circe-network-options
       '(("Libera"
