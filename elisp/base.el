@@ -8,8 +8,7 @@
                          ("melpa" . "https://melpa.org/packages/")))
 
 (unless (package-installed-p 'use-package)
-  (package-initialize)
-  (if (package-install 'use-package)
+  (if (straight-use-package 'use-package)
       (message "use-package installed successfully.")
     (error "Error: Failed to install use-package."))
   (setq use-package-verbose t)
