@@ -12,7 +12,6 @@
       (message "use-package installed successfully.")
     (error "Error: Failed to install use-package."))
   (setq use-package-verbose t)
-  (setq use-package-always-ensure t)
   (require 'use-package))
 
 
@@ -82,8 +81,7 @@
       scroll-down-aggressively           0.01
       scroll-preserve-screen-position    t
       auto-window-vscroll                nil
-	  inhibit-compacting-font-caches     t
-      use-package-always-ensure          t)
+	  inhibit-compacting-font-caches     t)
 
 (setq-default tab-width 4)
 
@@ -121,6 +119,7 @@
 ;; Server
 (use-package server
   :ensure nil
+  :straight nil
   :config
   (setq server-name "server")
   (server-force-delete)
@@ -128,6 +127,7 @@
 
 (use-package dired-x
   :ensure nil
+  :straight nil
   :config
   (add-hook 'dired-mode-hook (lambda () (dired-omit-mode)))
   (setq dired-omit-files
@@ -137,6 +137,7 @@
 (use-package ispell
   :defer 15
   :ensure nil
+  :straight nil
   :config
   (setq ispell-program-name (executable-find  "hunspell"))
   (setq ispell-really-hunspell t)
@@ -149,6 +150,7 @@
 ;; Desktop
 (use-package desktop
   :ensure nil
+  :straight nil
   :config
   (desktop-save-mode)
   (setq-default desktop-save 'if-exists))
