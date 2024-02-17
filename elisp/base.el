@@ -6,14 +6,19 @@
 (require 'gnutls)
 (setq package-archives '(("gnu"   . "https://elpa.gnu.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")))
-(require 'package)
-(when (not package-archive-contents)
-  (package-refresh-contents))
 
 (unless (package-installed-p 'use-package)
-  (package-install 'use-package))
+  (package-initialize)
+  (if (package-install 'use-package)
+      (message "use-package installed successfully.")
+    (error "Error: Failed to install use-package."))
+  (setq use-package-verbose t)
+  (setq use-package-always-ensure t)
+  (require 'use-package))
 
-(require 'use-package)
+
+(setq straight-use-package-by-default t)
+(package-initialize)
 
 (when (boundp 'package-native-compile)
   (setq package-native-compile 1))
