@@ -99,7 +99,7 @@
   :straight t)
 
 (use-package paradox
-  :straight ta
+  :straight t
   :config
   (paradox-enable))
 
@@ -137,6 +137,7 @@
   ;; Configure directory extension.
   (use-package vertico-directory
   :after vertico
+  :straight nil
   :ensure nil
   ;; More convenient directory navigation commands
   :bind (:map vertico-map
