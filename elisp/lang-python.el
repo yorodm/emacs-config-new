@@ -14,7 +14,6 @@
   :straight t
   :config
   (add-hook 'python-mode-hook #'pyvenv-mode))
-(setenv "WORKON_HOME" (expand-file-name "~/Documents/source/python/venvs"))
 
 (defun update-python-variables ()
   (setq eglot--lsp-python (executable-find "python"))

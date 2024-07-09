@@ -1,4 +1,5 @@
 (defvar bootstrap-version)
+(add-to-list 'exec-path "C:/Users/yoandy.rodriguez/scoop/shims")
 (let ((bootstrap-file
        (expand-file-name
         "straight/repos/straight.el/bootstrap.el"

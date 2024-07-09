@@ -170,6 +170,8 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (load custom-file)
 
+;; upcase-dwim
+(global-set-key (kbd "M-u") 'upcase-dwim)
 ;; for encryption
 (setq epg-pinentry-mode 'loopback)
 ;;

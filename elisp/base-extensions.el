@@ -346,11 +346,10 @@
     :straight t)
   (global-tree-sitter-mode))
 
-(use-package pass)
+(use-package ssh-agency
+  :straight t)
 (use-package format-all
   :straight t)
-;(load-file "~/sources/hugo-blog-mode/hugo-blog-mode.el")
-;(setq hugo-blog-project (expand-file-name "~/sources/yorodm-site/"))
 
 
 (provide 'base-extensions)

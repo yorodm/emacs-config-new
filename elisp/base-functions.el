@@ -145,4 +145,5 @@ See URL `https://docs.python.org/3.5/library/json.html#command-line-interface'."
   ;; The JSON parser chokes if the buffer is empty and has no JSON inside
   :predicate (lambda () (not (flycheck-buffer-empty-p)))))
 
+
 (provide 'base-functions)

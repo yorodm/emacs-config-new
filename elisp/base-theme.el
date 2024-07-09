@@ -5,10 +5,10 @@
 
 ;; (enable-theme 'uwu)
 
-(use-package color-theme-sanityinc-tomorrow
+(use-package catppuccin-theme
   :straight t
   :config
-  (color-theme-sanityinc-tomorrow-eighties))
+  (load-theme 'catppuccin :no-confirm))
 
 (defun select-font ()
   (interactive)
