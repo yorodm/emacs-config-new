@@ -8,7 +8,9 @@
 (use-package catppuccin-theme
   :straight t
   :config
-  (load-theme 'catppuccin :no-confirm))
+  (load-theme 'catppuccin :no-confirm)
+  (setq catppuccin-flavor 'frappe)
+  (catppuccin-reload))
 
 (defun select-font ()
   (interactive)
