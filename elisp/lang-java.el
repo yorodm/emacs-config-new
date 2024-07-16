@@ -1,6 +1,5 @@
 (use-package lsp-java
   :straight t
-  :after lsp
   :bind (("\C-\M-b" . lsp-find-implementation)
          ("M-RET" . lsp-execute-code-action))
 

@@ -12,3 +12,8 @@
 /elpa/
 /eln-cache/
 /straight/
+/eclipse.jdt.ls/
+/org-persist/
+/projectile.cache
+/server/
+/workspace/
