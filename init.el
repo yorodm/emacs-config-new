@@ -10,3 +10,4 @@
 (load-config "lang-rust.el")
 (load-config "lang-go.el")
 (load-config "lang-java.el")
+(load-config "lang-nix.el")
