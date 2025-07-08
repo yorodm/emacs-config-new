@@ -351,5 +351,9 @@
 (use-package format-all
   :straight t)
 
+(use-package eat
+  :straight t
+  :config
+  (setq eat-term-name "linux"))
 
 (provide 'base-extensions)
