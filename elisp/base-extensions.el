@@ -351,9 +351,10 @@
 (use-package format-all
   :straight t)
 
-(use-package eat
+(when (eq system-type 'gnu/linux)
+ (use-package eat
   :straight t
   :config
-  (setq eat-term-name "linux"))
+  (setq eat-term-name "linux")))
 
 (provide 'base-extensions)
