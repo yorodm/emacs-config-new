@@ -27,7 +27,8 @@
   :straight t
   :defer t
   :after lsp-mode
-  :config (dap-auto-configure-mode))
+  :config
+  (dap-auto-configure-mode))
 
 (use-package lsp-ui
   :straight t
