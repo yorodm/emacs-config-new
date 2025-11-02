@@ -236,6 +236,11 @@
   ("C-x g e" . magit-ediff-resolve)
   ("C-x g r" . magit-rebase-interactive))
 
+(use-package magit-delta
+  :straight t
+  :after magit
+  :hook (magit-mode . magit-delta-mode))
+
 
 
 (defun endless/org-ispell ()
